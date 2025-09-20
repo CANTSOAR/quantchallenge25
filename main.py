@@ -14,7 +14,7 @@ def sklearn_model(train_data_csv, model_id = 0):
     model = [LinearRegression(),
              Lasso(),
              Ridge(),
-             MultiOutputRegressor(GradientBoostingRegressor(n_estimators = 500, max_depth = 5, validation_fraction = .1, n_iter_no_change = 10))
+             MultiOutputRegressor(GradientBoostingRegressor(n_estimators = 500, learning_rate = .05, max_depth = 3, validation_fraction = .1, n_iter_no_change = 20, subsample = .8, max_features = "sqrt"))
              ][model_id]
 
     y = data[["Y1", "Y2"]]
