@@ -34,6 +34,6 @@ def make_submit_file(model, test_data_csv):
     y = pd.DataFrame(model.predict(X), columns = ["Y1", "Y2"])
 
     data = pd.concat([ids, y], axis = 1)
-    n = os.listdir("./submissions")
+    n = len(os.listdir("./submissions"))
 
     data.to_csv(f"./submissions/submit_{n}.csv")
