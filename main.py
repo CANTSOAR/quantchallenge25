@@ -36,4 +36,4 @@ def make_submit_file(model, test_data_csv):
     data = pd.concat([ids, y], axis = 1)
     n = len(os.listdir("./submissions"))
 
-    data.to_csv(f"./submissions/submit_{n}.csv")
+    data.to_csv(f"./submissions/submit_{n}.csv", index = False)
